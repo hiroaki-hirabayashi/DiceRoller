@@ -19,8 +19,29 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
 
-            val resultTextView: TextView = findViewById(R.id.textView)
-            resultTextView.text = "6"
+//            val resultTextView: TextView = findViewById(R.id.textView)
+//            resultTextView.text = "6"
+
+            rollDice()
         }
+    }
+
+    private fun rollDice() {
+        // 初期値
+        val dice = Dice(6)
+        // roll呼び出し
+        val diceRoll = dice.roll()
+        // textViewのid
+        val resultTextView: TextView = findViewById(R.id.textView)
+        // textViewのtextにStringにキャストした値を入れる
+        resultTextView.text = diceRoll.toString()
+    }
+}
+
+
+class Dice(private val numSides: Int) {
+
+    fun roll(): Int {
+        return (1..numSides).random()
     }
 }

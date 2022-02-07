@@ -3,6 +3,7 @@ package com.example.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -32,9 +33,13 @@ class MainActivity : AppCompatActivity() {
         // roll呼び出し
         val diceRoll = dice.roll()
         // textViewのid
-        val resultTextView: TextView = findViewById(R.id.textView)
+        // val resultTextView: TextView = findViewById(R.id.textView)
         // textViewのtextにStringにキャストした値を入れる
-        resultTextView.text = diceRoll.toString()
+        // resultTextView.text = diceRoll.toString()
+
+
+        val diceImage: ImageView = findViewById(R.id.imageView)
+        diceImage.setImageResource(R.drawable.dice_2)
     }
 }
 
